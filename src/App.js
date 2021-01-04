@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { Route } from "react-router-dom";
 import SignUp from "./components/Signup";
+import SignIn from "./components/SignIn";
 
 function App() {
   
@@ -15,6 +16,9 @@ function App() {
       </Route>
       <Route exact path="/signup">
         <SignUp />
+      </Route>
+      <Route exact path="/signin">
+        <SignIn />
       </Route>
       <Footer />
     </Layout>

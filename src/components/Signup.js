@@ -1,5 +1,6 @@
 import {Form ,Input, Button} from "antd";
 import { useState } from 'react';
+import {Link} from "react-router-dom";
 
 const initialFormValues = {
     username: "",
@@ -15,7 +16,7 @@ const Signup = () => {
         setSignupForm({...signupForm,[name]:value});
     }
     const onSubmit = (values) => {
-        //postToDB (signupForm)
+        //postToDB (signupform)
     }
 
 
