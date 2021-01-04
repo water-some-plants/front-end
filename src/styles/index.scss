@@ -1,3 +1,13 @@
+@import "reset.scss";
+
+// html,
+// body,
+// #root {
+//   height: 100%;
+// }
+// .height-100 {
+//   height: 100%;
+// }
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,14 +24,29 @@
     width: 100px;
   }
 }
-.cards {
+.cards-div {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: antiquewhite;
   .ant-card {
     text-align: center;
     margin: 5px;
     width: 40%;
   }
+}
+.mission-div {
+  text-align: center;
+  p {
+    width: 40%;
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+  button {
+    margin: 2px;
+  }
+}
+.footer {
+  text-align: center;
 }
