@@ -10,5 +10,13 @@ const initialState={
 }
 
 const reducer=(state=initialState, action){
-    
+    switch (action.type){
+        case "ADD_PLANT":
+            return{
+                ...state,
+                createdPlants:action.payload
+            }
+        default:
+            return state;
+    }
 }
