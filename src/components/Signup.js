@@ -1,8 +1,20 @@
 import {Form ,Input, Button} from "antd";
 
-const SignIn = () => {
+const Signup = (props) => {
+    const {change, submit} = props;
+
+    const onChange = (evt) => {
+        const {name, value} = evt.target;
+        change(name, value);
+    }
+    const onSubmit = (values) => {
+        console.log("Success:", values);
+    }
     return (
-        <Form>
+        <Form 
+            name="register"
+            onFinish={onSubmit}
+        >
             <Form.Item
                 name="username"
                 label="Username"
@@ -13,7 +25,7 @@ const SignIn = () => {
                     }
                 ]}
             >
-                <Input />
+                <Input name="username" onChange={onChange} />
                 </Form.Item>
 
             <Form.Item 
@@ -26,7 +38,7 @@ const SignIn = () => {
                     }
                 ]}
             >
-                <Input />
+                <Input name="phoneNumber" onChange={onChange} />
             </Form.Item>
             <Form.Item
                 name="password"
@@ -39,7 +51,7 @@ const SignIn = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password />
+                <Input.Password name="password" onChange={onChange}/>
             </Form.Item>
             <Form.Item
                 name="confirm"
@@ -62,13 +74,13 @@ const SignIn = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password />
+                <Input.Password name="password" onChange={onChange}/>
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit">SignUp</Button>
+                <Button type="primary" htmlType="submit" >SignUp</Button>
             </Form.Item>
         </Form>
     );
 }
 
-export default SignIn;
+export default Signup;
