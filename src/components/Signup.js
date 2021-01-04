@@ -1,15 +1,24 @@
 import {Form ,Input, Button} from "antd";
+import { useState } from 'react';
 
-const Signup = (props) => {
-    const {change, submit} = props;
+const initialFormValues = {
+    username: "",
+    phoneNumber: "",
+    password: "",
+  }
+
+const Signup = () => {
+    const [signupForm , setSignupForm] = useState(initialFormValues);
 
     const onChange = (evt) => {
         const {name, value} = evt.target;
-        change(name, value);
+        setSignupForm({...signupForm,[name]:value});
     }
     const onSubmit = (values) => {
-        console.log("Success:", values);
+        //postToDB (signupForm)
     }
+
+
     return (
         <Form 
             name="register"
