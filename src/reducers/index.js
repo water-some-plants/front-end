@@ -1,21 +1,18 @@
 
 
 const initialState={
-    id:Date.now(),
-    nickName:'',
+    h20_frequency:"",
+    id:'',
+    nickname:'',
+    picture:'',
     species:'',
-    h2oFrequency:'',
-    image:'',
     createdPlants:[]
 }
 
 const reducer=(state=initialState, action){
     switch (action.type){
-        case "ADD_PLANT":
-            return{
-                ...state,
-                createdPlants:action.payload
-            }
+        case "SIGNIN":
+            
         default:
             return state;
     }

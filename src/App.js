@@ -1,7 +1,7 @@
 import { Layout} from "antd";
 import Header from "./components/Header"
 import Home from "./components/Home"
-
+import addPlant from './actions'
 
 
 function App() {
