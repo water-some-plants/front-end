@@ -7,7 +7,9 @@ const {Header: AntHeader } = Layout;
 const Header = () => {
     return (
         <AntHeader className="header">
-            <Image preview={false} width={70} src={logo} alt="logo" />
+            <Link to="/">
+                <Image preview={false} width={70} src={logo} alt="logo" />
+            </Link>
             <Menu theme="dark" mode="horizontal">
                 <Menu.Item key="1" >
                     <Link to="/signin">

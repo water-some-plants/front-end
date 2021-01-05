@@ -1,4 +1,4 @@
-import { Form,Input, Button } from "antd";
+import { Form,Input, Button,Row } from "antd";
 import {useState} from "react";
 
 const initialFormValues = {
@@ -17,11 +17,56 @@ const SignIn = () => {
         //postToDB(values)//values : Object
     }
 
+    const formItemLayout = {
+        labelCol: {
+          lg: {
+              span:8,
+          },
+          xs: {
+            span: 24,
+          },
+          sm: {
+            span: 8,
+          },
+        },
+        wrapperCol: {
+            lg:{
+                span:8,
+            },
+          xs: {
+            span: 12,
+          },
+          sm: {
+            span: 16,
+          },
+        },
+      };
+    const tailFormItemLayout = {
+        wrapperCol: {
+            lg: {
+                span:15,
+                offset:4,
+            },
+          xs: {
+            span: 12,
+            offset: 0,
+          },
+          sm: {
+            span: 12,
+            offset: 4,
+          },
+        },
+    };
+
     return (
-        <Form 
+        <Row type="flex" justify="center" align="middle">
+        <Form
+            {...formItemLayout}
+            className="forms"
             name="register"
             onFinish={onSubmit}
         >
+            <h1>Welcome Back</h1>
             <Form.Item
                 name="username"
                 label="Username"
@@ -47,10 +92,13 @@ const SignIn = () => {
             >
                 <Input.Password name="password" onChange={onChange}/>
             </Form.Item>
-            <Form.Item>
-                <Button type="primary" htmlType="submit" >SignUp</Button>
+            <Form.Item
+                {...tailFormItemLayout}
+            >
+                <Button type="primary" htmlType="submit" >SignIn</Button>
             </Form.Item>
         </Form>
+        </Row>
     );
 }
 
