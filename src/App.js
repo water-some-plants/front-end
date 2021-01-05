@@ -5,10 +5,26 @@ import addPlant from './actions'
 
 
 function App() {
+  
   return (
-    <Layout>
+    <Layout className="height-100">
       <Header />
-      <Home />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/signup">
+        <SignUp />
+      </Route>
+      <Route exact path="/signin">
+        <SignIn />
+      </Route>
+      <Route exact path="/contactus">
+        <ContactUs />
+      </Route>
+      <Route exact path="/aboutus">
+        <AboutUs />
+      </Route>
+      <Footer />
     </Layout>
   );
 }
