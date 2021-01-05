@@ -1,8 +1,13 @@
+  
 import { Layout} from "antd";
-import Header from "./components/Header"
-import Home from "./components/Home"
-import addPlant from './actions'
-
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import { Route } from "react-router-dom";
+import SignUp from "./components/Signup";
+import SignIn from "./components/SignIn";
+import ContactUs from "./components/ContactUs";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   
