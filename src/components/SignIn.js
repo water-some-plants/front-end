@@ -1,4 +1,4 @@
-import { Form,Input, Button,Row } from "antd";
+import { Form, Input, Button, Row } from "antd";
 import {useState} from "react";
 
 const initialFormValues = {
