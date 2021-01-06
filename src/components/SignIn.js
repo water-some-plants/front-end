@@ -1,5 +1,6 @@
 import { Form, Input, Button, Row } from "antd";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 const initialFormValues = {
     username:"",
@@ -96,6 +97,11 @@ const SignIn = () => {
                 {...tailFormItemLayout}
             >
                 <Button type="primary" htmlType="submit" >SignIn</Button>
+                <Button type="primary" >
+                    <Link to="/signup">
+                        <span>SignUp</span>
+                    </Link>
+                </Button>
             </Form.Item>
         </Form>
         </Row>
