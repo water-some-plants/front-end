@@ -1,7 +1,11 @@
 import { Form, Input, Button, Row } from "antd";
 import { useState } from "react";
 import axios from "axios";
-import axiosWithAuth from "../axios/axios.utils";
+import { useHistory } from 'react-router-dom'
+import  axiosWithAuth  from "../axios/axios.utils";
+import PrivateRoute from "./PrivateRoute";
+import { Footer } from "antd/lib/layout/layout";
+
 
 const initialFormValues = {
   username: "",
@@ -10,6 +14,7 @@ const initialFormValues = {
 
 const SignIn = () => {
   const [signInForm, setSigninForm] = useState(initialFormValues);
+  const history=useHistory();
 
   const onChange = (evt) => {
     const { name, value } = evt.target;
@@ -21,7 +26,11 @@ const SignIn = () => {
       values
         )
         .then(res=>{
+            localStorage.setItem('token', res.data.token)  
             console.log(res.data)
+        })
+        .then((res)=>{
+          history.push('/UserPage')
         })
         .catch(err=>{
             console.log(err)

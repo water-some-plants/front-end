@@ -8,6 +8,8 @@ import SignUp from "./components/Signup";
 import SignIn from "./components/SignIn";
 import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUs";
+import PrivateRoute from './components/PrivateRoute'
+import UserPage from "./components/UserPage";
 
 function App() {
   
@@ -29,6 +31,11 @@ function App() {
       <Route exact path="/aboutus">
         <AboutUs />
       </Route>
+      <PrivateRoute
+        exact path='/UserPage'
+        componentType={'UserPage'}
+        component={UserPage}
+        ></PrivateRoute>
       <Footer />
     </Layout>
   );
