@@ -10,7 +10,7 @@ import logo from "../images/logo.png";
 const UserProfile = () => {
 
     const [profileForm, setProfileForm] = useState();
-    const [initialFormValues, setInitialFormValues] = useState();//initial form values comes from API
+    const [initialFormValues, setInitialFormValues] = useState({});//initial form values will come from API
 
     const onChange = (evt) => {
         const {name, value} = evt.target;
@@ -65,6 +65,7 @@ const UserProfile = () => {
             
             <Form
                     {...formItemLayout}
+                    initialValues={initialFormValues}
                     className="forms"
                     name="profile"
                     onFinish={onSubmit}
