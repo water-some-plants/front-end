@@ -1,31 +1,39 @@
-//will be a form for adding plants to the UserPage
 
 import { Form, Input, Button, Row, Select } from "antd";
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { addPlant } from "../redux-store/actions";
+// import { addPlant } from "../redux-store/actions";
 import { connect } from "react-redux";
-
+import axiosWithAuth from '../axios/axios.utils.js'
 const { Option } = Select;
 
 const AddPlant = () => {
   const [formData, setFormData] = useState("");
 
   const onChange = (e) => {
-    console.log(e);
+
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("submit")
+
     const newPlant = {
       h2o_frequency: formData.h2o_frequency,
+      id:9,
       nickname: formData.nickname,
+      picture:null,
       species: formData.species,
+      user_id:9
     };
-    addPlant(newPlant);
+    // addPlant(newPlant);
+    // setFormData("")
+   axiosWithAuth()
+   .post("plants",newPlant)
+      .then(res=>{console.log(res)})
+      .catch(err=>{console.log(err)})
   };
 
   const formItemLayout = {
@@ -115,4 +123,5 @@ const AddPlant = () => {
     </Row>
   );
 };
-export default connect(null, { addPlant })(AddPlant);
+export default AddPlant
+// export default connect(null, /*{ addPlant }*/)(AddPlant);
