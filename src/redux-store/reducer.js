@@ -11,12 +11,12 @@ const reducer=(state=initialState, action)=>{
         case "POST_PLANT_SUCCESS":
             return({
                 ...state,
-                plants:[...state.plants,action.payload]
+                plants:action.payload
             })
         case "GET_USER_PLANTS_SUCCESS":
             return({
                 ...state,
-                plants:[action.payload]
+                plants:action.payload
             })
         default:
             return state;      

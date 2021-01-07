@@ -21,11 +21,13 @@ const SignIn = () => {
     setSigninForm({ ...signInForm, [name]: value });
   };
   const onSubmit = (values) => {
+    localStorage.clear()
     axios.post(
       "https://water-some-plants1.herokuapp.com/api/auth/login",
       values
         )
         .then(res=>{
+
             localStorage.setItem('token', res.data.token)  
             localStorage.setItem('id',JSON.stringify(res.data.id))
         })
@@ -33,7 +35,7 @@ const SignIn = () => {
           history.push('/UserPage')
         })
         .catch(err=>{
-            console.log(err)
+            alert("user does not exist. Try registering!")
         })
     
   };

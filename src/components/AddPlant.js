@@ -3,9 +3,13 @@ import axios from "axios";
 import React from "react";
 import { addPlant } from '../redux-store/actions'
 import { useState } from "react";
+import { useHistory } from 'react-router-dom'
 import { connect, useDispatch } from "react-redux";
 import axiosWithAuth from "../axios/axios.utils.js";
+
 const { Option } = Select;
+
+
 
 const AddPlant = () => {
   const [formData, setFormData] = useState("");
@@ -23,7 +27,7 @@ const AddPlant = () => {
       nickname: formData.nickname,
       picture: "",
       species: formData.species,
-      user_id: 9,
+      user_id:localStorage.getItem('id'),
     };
     
     dispatch(addPlant(newPlant));

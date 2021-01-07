@@ -14,11 +14,10 @@ export default function PlantSection() {
     }, [])
     return (
         <div className="plants-container">
-            {plants.map((plant)=>{
-               return (plant.map((att)=>{
-                    return <PlantCard props={att}/>
-                }))
-            })
+            {plants.message ? 
+                (console.log(plants.message))
+                :
+                (plants.map((plant)=>{return <PlantCard props={plant}/>}))
             }
         </div>
     )

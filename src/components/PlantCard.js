@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "antd";
+import { Card, Button } from "antd";
 
 
 export default function PlantCard(props) {
@@ -8,8 +8,8 @@ export default function PlantCard(props) {
       <header>{props.props.nickname}</header>
       <p>{props.props.h2o_frequency}</p>
       <p>{props.props.species}</p>
-      <button>Update info</button>
-      <button>Delete plant</button>
+      <Button type="primary">Update info</Button>
+      <Button type="primary">Delete plant</Button>
     </Card>
   );
 }
