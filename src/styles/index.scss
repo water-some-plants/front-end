@@ -94,4 +94,23 @@
   .individual-avatar {
     margin-bottom: 2%;
   }
+  
+  .plants-container{
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: right;
+  background-color: black;
+    .ant-card {
+    text-align: center;
+    margin: 5px;
+    width: 40%;
+    }
+  }
+    
+  .plant-card {
+    text-align: center;
+    background-color: black;
+    border:black 2px solid;
+  }
 }

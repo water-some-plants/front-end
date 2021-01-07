@@ -27,7 +27,7 @@ const SignIn = () => {
         )
         .then(res=>{
             localStorage.setItem('token', res.data.token)  
-            console.log(res.data)
+            localStorage.setItem('id',JSON.stringify(res.data.id))
         })
         .then((res)=>{
           history.push('/UserPage')

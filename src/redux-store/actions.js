@@ -1,18 +1,39 @@
 import axiosWithAuth from "../axios/axios.utils";
 
-export const ADD_PLANT="ADD_PLANT";
+export const loadPlants = () => {
+  //will load array of saved plants, need to hold in state to allow for modification of info for plants
+};
 
-export const loadPlants=()=>{
-    //will load array of saved plants, need to hold in state to allow for modification of info for plants
-}
+const userId = localStorage.getItem("id");
 
-// export const addPlant=(newPlant)=>{
-    
-//         axiosWithAuth()
-//         .post("https://water-some-plants1.herokuapp.com/api/plants", newPlant)
-//             .then((res)=>{
-//                 console.log(res.data)}
-//                     // dispatch({type:ADD_PLANT,payload:res.data})})
-//             // .catch(err=>{console.log(err)})
-// }
-         
+export const addPlant = (newPlant) => {
+  return (dispatch) => {
+    dispatch({ type: "POST_PLANT_START" });
+    axiosWithAuth()
+    .post("plants", newPlant)
+    .then((res) => {
+ 
+      axiosWithAuth()
+      .get(`plants/user/${userId}`)
+          .then((res) => {
+
+            dispatch({ type: "POST_PLANT_SUCCESS", payload: res.data });
+          });
+      })
+
+      .catch((err)=>{console.log(err)});
+  };
+};
+
+export const loadPlant = () => {
+  return (dispatch) => {
+    dispatch({ type: "GET_USER_PLANTS" });
+    axiosWithAuth()
+    .get(`plants/user/${userId}`)
+    .then((res) => {
+      dispatch({ type: "GET_USER_PLANTS_SUCCESS", payload: res.data })
+      })
+
+      .catch((err)=>{console.log(err)});
+  };
+};

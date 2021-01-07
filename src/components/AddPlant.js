@@ -1,39 +1,40 @@
-
 import { Form, Input, Button, Row, Select } from "antd";
 import axios from "axios";
 import React from "react";
+import { addPlant } from '../redux-store/actions'
 import { useState } from "react";
-// import { addPlant } from "../redux-store/actions";
-import { connect } from "react-redux";
-import axiosWithAuth from '../axios/axios.utils.js'
+import { connect, useDispatch } from "react-redux";
+import axiosWithAuth from "../axios/axios.utils.js";
 const { Option } = Select;
 
 const AddPlant = () => {
   const [formData, setFormData] = useState("");
 
-  const onChange = (e) => {
+  const dispatch=useDispatch();
 
+  const onChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
-
     const newPlant = {
       h2o_frequency: formData.h2o_frequency,
-      id:9,
       nickname: formData.nickname,
-      picture:null,
+      picture: "",
       species: formData.species,
-      user_id:9
+      user_id: 9,
     };
-    // addPlant(newPlant);
-    // setFormData("")
-   axiosWithAuth()
-   .post("plants",newPlant)
-      .then(res=>{console.log(res)})
-      .catch(err=>{console.log(err)})
+    
+    dispatch(addPlant(newPlant));
+    setFormData({
+      h2o_frequency: "",
+      nickname: "",
+      picture: "",
+      species: "",
+      user_id: "",
+    });
+    // console.log(newPlant);
   };
 
   const formItemLayout = {
@@ -82,11 +83,12 @@ const AddPlant = () => {
       <Form {...formItemLayout} className="forms" name="register" >
         <h1>Add a plant to your collection!</h1>
         <Form.Item name="h2o_frequency" label="h2o_frequency">
-          <input 
+          <input
             name="h2o_frequency"
             type="text"
             placeholder="waterings per week?"
-            onChange={onChange}/>
+            onChange={onChange}
+          />
           {/* <Select
             name="h2o_frequency"
             defaultValue="Watering schedule"
@@ -123,5 +125,4 @@ const AddPlant = () => {
     </Row>
   );
 };
-export default AddPlant
-// export default connect(null, /*{ addPlant }*/)(AddPlant);
+export default AddPlant;

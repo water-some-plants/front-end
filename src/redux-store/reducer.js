@@ -1,23 +1,23 @@
-// import  { ADD_PLANT }  from './actions';
+
 
 const initialState={
-    h2o_frequency:"",
-    id:"",
-    nickname:"",
-    picture:"",
-    species:"",
-    user_id:"",
     plants:[]
 }
 
 const reducer=(state=initialState, action)=>{
     switch(action.type){
-        case "ADD_PLANT":
-            console.log(action.payload);
-            return{
+        case  "POST_PLANT_START":
+            return state;
+        case "POST_PLANT_SUCCESS":
+            return({
                 ...state,
-                plants:action.payload
-            }
+                plants:[...state.plants,action.payload]
+            })
+        case "GET_USER_PLANTS_SUCCESS":
+            return({
+                ...state,
+                plants:[action.payload]
+            })
         default:
             return state;      
     };
