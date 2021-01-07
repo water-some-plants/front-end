@@ -1,4 +1,5 @@
 import {Avatar, Layout} from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 const {Content} = Layout;
 
 const ppl = [
@@ -6,7 +7,22 @@ const ppl = [
         name:"Senih Aydin",
         role:"Frontend Developer",
         avatar:""//url will come here
-    }
+    },
+    {
+        name:"Sebastian Espeset",
+        role:"Frontend Developer",
+        avatar:""//url will come here
+    },
+    {
+        name:"Carlos Colindres",
+        role:"Frontend Developer",
+        avatar:""//url will come here
+    },
+    {
+        name:"Tyler Maynard",
+        role:"Frontend Developer",
+        avatar:""//url will come here
+    },
 ]
 
 const AboutUs = () => {
@@ -21,7 +37,7 @@ const AboutUs = () => {
                     return(
                         <div className="individual-avatar">
                             <h2>{person.name}</h2>
-                            <Avatar size={256} src={person.avatar}/>
+                            <Avatar size={256} icon={<UserOutlined />}/>
                             <h2>{person.role}</h2>
                         </div>
                     )
