@@ -84,35 +84,11 @@ const SignIn = () => {
 
   return (
     <Row type="flex" justify="center" align="middle">
-      <Form
-        {...formItemLayout}
-        className="forms"
-        name="register"
-        onFinish={onSubmit}
-      >
-        <h1>Welcome Back</h1>
-        <Form.Item
-          name="username"
-          label="Username"
-          rules={[
-            {
-              required: true,
-              message: "please input your username!",
-            },
-          ]}
-        >
-          <Input name="username" onChange={onChange} />
-        </Form.Item>
-        <Form.Item
-          name="password"
-          label="Password"
-          rules={[
-            {
-              required: true,
-              message: "please input your password!",
-            },
-          ]}
-          hasFeedback
+        <Form
+            {...formItemLayout}
+            className="forms"
+            name="register"
+            onFinish={onSubmit}
         >
             <h1>Welcome Back</h1>
             <Form.Item
@@ -150,15 +126,8 @@ const SignIn = () => {
                     </Link>
                 </Button>
             </Form.Item>
-          <Input.Password name="password" onChange={onChange} />
-        </Form.Item>
-        <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            SignIn
-          </Button>
-        </Form.Item>
-      </Form>
-    </Row>
+        </Form>
+        </Row>
   );
 };
 
