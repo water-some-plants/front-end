@@ -1,5 +1,4 @@
 import {useEffect} from 'react'
-import { Card } from 'antd'
 import { useSelector, useDispatch } from 'react-redux';
 import {loadPlant} from '../redux-store/actions'
 import PlantCard from './PlantCard'

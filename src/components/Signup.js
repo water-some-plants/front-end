@@ -1,8 +1,6 @@
 import { Form, Input, Button, Row } from "antd";
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { axiosWithAuth } from "../axios/axios.utils";
 import { useHistory } from 'react-router-dom'
 
 const initialFormValues = {

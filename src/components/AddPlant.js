@@ -1,13 +1,9 @@
-import { Form, Input, Button, Row, Select } from "antd";
-import axios from "axios";
+import { Form, Row } from "antd";
 import React from "react";
 import { addPlant } from '../redux-store/actions'
 import { useState } from "react";
-import { useHistory } from 'react-router-dom'
-import { connect, useDispatch } from "react-redux";
-import axiosWithAuth from "../axios/axios.utils.js";
+import { useDispatch } from "react-redux";
 
-const { Option } = Select;
 
 
 
