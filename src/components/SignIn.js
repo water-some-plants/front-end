@@ -1,12 +1,11 @@
 import { Form, Input, Button, Row } from "antd";
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom'
-import  axiosWithAuth  from "../axios/axios.utils";
-import PrivateRoute from "./PrivateRoute";
-import { Footer } from "antd/lib/layout/layout";
+// import  axiosWithAuth  from "../axios/axios.utils";
+// import PrivateRoute from "./PrivateRoute";
+// import { Footer } from "antd/lib/layout/layout";
 
 
 const initialFormValues = {
@@ -151,10 +150,6 @@ const SignIn = () => {
                     </Link>
                 </Button>
             </Form.Item>
-        </Form>
-        </Row>
-    );
-}
           <Input.Password name="password" onChange={onChange} />
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
