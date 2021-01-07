@@ -16,11 +16,10 @@ export const addPlant = (newPlant) => {
       axiosWithAuth()
       .get(`plants/user/${userId}`)
           .then((res) => {
-
+            console.log(res)
             dispatch({ type: "POST_PLANT_SUCCESS", payload: res.data });
           });
       })
-
       .catch((err)=>{console.log(err)});
   };
 };
@@ -31,9 +30,9 @@ export const loadPlant = () => {
     axiosWithAuth()
     .get(`plants/user/${userId}`)
     .then((res) => {
+      console.log(res.data)
       dispatch({ type: "GET_USER_PLANTS_SUCCESS", payload: res.data })
       })
-
       .catch((err)=>{console.log(err)});
   };
 };

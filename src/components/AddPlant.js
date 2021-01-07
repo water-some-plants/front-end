@@ -9,9 +9,7 @@ import { useDispatch } from "react-redux";
 
 const AddPlant = () => {
   const [formData, setFormData] = useState("");
-
   const dispatch=useDispatch();
-
   const onChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -25,7 +23,6 @@ const AddPlant = () => {
       species: formData.species,
       user_id:localStorage.getItem('id'),
     };
-    
     dispatch(addPlant(newPlant));
     setFormData({
       h2o_frequency: "",
@@ -36,7 +33,6 @@ const AddPlant = () => {
     });
     // console.log(newPlant);
   };
-
   const formItemLayout = {
     labelCol: {
       lg: {
@@ -77,7 +73,6 @@ const AddPlant = () => {
       },
     },
   };
-
   return (
     <Row type="flex" justify="center" align="middle">
       <Form {...formItemLayout} className="forms" name="register" >
@@ -111,7 +106,6 @@ const AddPlant = () => {
             onChange={onChange}
           />
         </Form.Item>
-
         <Form.Item name="species" label="species">
           <input
             name="species"
@@ -125,4 +119,5 @@ const AddPlant = () => {
     </Row>
   );
 };
+
 export default AddPlant;

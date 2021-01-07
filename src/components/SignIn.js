@@ -23,22 +23,23 @@ const SignIn = () => {
   };
   const onSubmit = (values) => {
     localStorage.clear()
+    const valuesObject={
+      username:values.username,
+      password:values.password,
+      phoneNumber:values.phone
+      }
     axios.post(
       "https://water-some-plants1.herokuapp.com/api/auth/login",
-      values
+      valuesObject
         )
         .then(res=>{
-
             localStorage.setItem('token', res.data.token)  
             localStorage.setItem('id',JSON.stringify(res.data.id))
-        })
-        .then((res)=>{
-          history.push('/UserPage')
+            history.push('/UserPage')
         })
         .catch(err=>{
             alert("user does not exist. Try registering!")
         })
-    
   };
 
   const formItemLayout = {

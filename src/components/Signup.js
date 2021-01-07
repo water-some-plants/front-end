@@ -8,7 +8,6 @@ const initialFormValues = {
   phoneNumber: "",
   password: "",
 };
-
 const Signup = () => {
   const [signupForm, setSignupForm] = useState(initialFormValues);
   const history=useHistory();  
@@ -35,7 +34,10 @@ const Signup = () => {
         alert(err);
       })
       .then((res)=>{
-          history.push('/UserPage')
+          history.push('/Signin')
+      })
+      .catch((err) => {
+        alert(err);
       })
   };
   const formItemLayout = {
@@ -78,7 +80,6 @@ const Signup = () => {
       },
     },
   };
-
   return (
     <Row type="flex" justify="center" align="center" className="row">
       <Form
@@ -100,7 +101,6 @@ const Signup = () => {
         >
           <Input name="username" onChange={onChange} />
         </Form.Item>
-
         <Form.Item
           name="phone"
           label="Phone Number"
@@ -140,7 +140,6 @@ const Signup = () => {
                 if (!value || getFieldValue("password") === value) {
                   return Promise.resolve();
                 }
-
                 return Promise.reject(
                   "The two passwords that you entered do not match!"
                 );
@@ -160,5 +159,4 @@ const Signup = () => {
     </Row>
   );
 };
-
 export default Signup;
