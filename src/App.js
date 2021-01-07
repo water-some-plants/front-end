@@ -1,3 +1,4 @@
+  
 import { Layout} from "antd";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -8,6 +9,9 @@ import SignIn from "./components/SignIn";
 import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUs";
 import UserProfile from "./components/UserProfile";
+
+import PrivateRoute from './components/PrivateRoute'
+import UserPage from "./components/UserPage";
 
 function App() {
   
@@ -32,6 +36,11 @@ function App() {
       <Route exact path="/userprofile">
         <UserProfile />
       </Route>
+      <PrivateRoute
+        exact path='/UserPage'
+        componentType={'UserPage'}
+        component={UserPage}
+        ></PrivateRoute>
       <Footer />
     </Layout>
   );
