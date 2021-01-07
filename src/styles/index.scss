@@ -123,8 +123,9 @@ h1 {
   .individual-avatar {
     margin-bottom: 2%;
   }
+  
+ 
 }
-
 @media only screen and (max-width: 768px) {
   .cards-div {
     .ant-card {
@@ -138,3 +139,19 @@ h1 {
     }
   }
 }
+.plants-container{
+  display: flex;
+justify-content: center;
+flex-wrap: wrap;
+align-items: right;
+  .ant-card {
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+  }
+  button{
+    margin: 2% 2% 0 2%;
+  }
+
+}
+  
