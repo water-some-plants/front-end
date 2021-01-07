@@ -28,6 +28,10 @@ const Home = () => {
             <div className="mission-div">
                 <h1>Our Mission</h1>
                 <p>In a time when there`s an app for organizing just about every aspect of our lives, this isn`t easily available for plant care.</p>
+                <p>Water my Plants aims yo help you get more organized with your plant care by keeping track of your plants. 
+                    We want to help you become a savvy plant parent and never again have to remember when you watered last.</p>
+            </div>
+            <div className="home-bottom-buttons">
             <Button type="primary">
                 <Link to="/signin">
                     <span>SIGN IN</span>

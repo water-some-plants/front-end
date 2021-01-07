@@ -8,6 +8,8 @@ import SignUp from "./components/Signup";
 import SignIn from "./components/SignIn";
 import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUs";
+import UserProfile from "./components/UserProfile";
+
 import PrivateRoute from './components/PrivateRoute'
 import UserPage from "./components/UserPage";
 
@@ -30,6 +32,9 @@ function App() {
       </Route>
       <Route exact path="/aboutus">
         <AboutUs />
+      </Route>
+      <Route exact path="/userprofile">
+        <UserProfile />
       </Route>
       <PrivateRoute
         exact path='/UserPage'

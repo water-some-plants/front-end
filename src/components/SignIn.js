@@ -1,4 +1,6 @@
 import { Form, Input, Button, Row } from "antd";
+import {useState} from "react";
+import {Link} from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from 'react-router-dom'
@@ -113,6 +115,46 @@ const SignIn = () => {
           ]}
           hasFeedback
         >
+            <h1>Welcome Back</h1>
+            <Form.Item
+                name="username"
+                label="Username"
+                rules={[
+                    {
+                        required: true,
+                        message: 'please input your username!'
+                    }
+                ]}
+            >
+                <Input name="username" onChange={onChange} />
+            </Form.Item>
+            <Form.Item
+                name="password"
+                label="Password"
+                rules={[
+                    {
+                        required: true,
+                        message: 'please input your password!'
+                    }
+                ]}
+                hasFeedback
+            >
+                <Input.Password name="password" onChange={onChange}/>
+            </Form.Item>
+            <Form.Item
+                {...tailFormItemLayout}
+            >
+                <Button type="primary" htmlType="submit" >SignIn</Button>
+                <Button type="primary" >
+                    <Link to="/signup">
+                        <span>SignUp</span>
+                    </Link>
+                </Button>
+            </Form.Item>
+        </Form>
+        </Row>
+    );
+}
           <Input.Password name="password" onChange={onChange} />
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>

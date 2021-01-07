@@ -6,11 +6,11 @@ const {Header: AntHeader } = Layout;
 
 const Header = () => {
     return (
-        <AntHeader className="header">
+        <AntHeader className="header" >
             <Link to="/">
                 <Image preview={false} width={70} src={logo} alt="logo" />
             </Link>
-            <Menu theme="dark" mode="horizontal">
+            <Menu theme="light" mode="horizontal">
                 <Menu.Item key="1" >
                     <Link to="/signin">
                         <span>SIGN IN</span>
