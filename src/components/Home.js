@@ -25,6 +25,7 @@ const Home = () => {
                     <p>Quickly record watering so you can get back to your other tasks.</p>
                 </Card>
             </div>
+            { localStorage.getItem('id')?'':
             <div className="mission-div">
                 <h1>Our Mission</h1>
                 <p>In a time when there`s an app for organizing just about every aspect of our lives, this isn`t easily available for plant care.</p>
@@ -39,6 +40,7 @@ const Home = () => {
                 </Link>
             </Button>
             </div>
+            }
         </Content>
     )
 }

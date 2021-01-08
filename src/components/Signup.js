@@ -39,6 +39,9 @@ const Signup = () => {
       .then((res)=>{
           history.push('/UserPage')
       })
+      .catch((err) => {
+        alert(err);
+      })
   };
   const formItemLayout = {
     labelCol: {

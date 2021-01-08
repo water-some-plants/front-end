@@ -1,7 +1,9 @@
 
 
 const initialState={
-    plants:[]
+    plants:[],
+    isLoggedIn:false,
+    
 }
 
 const reducer=(state=initialState, action)=>{
@@ -18,6 +20,11 @@ const reducer=(state=initialState, action)=>{
                 ...state,
                 plants:action.payload
             })
+        case "DELETE_PLANT_SUCCESS":
+            return{
+                ...state,
+                plants:action.payload
+            }
         default:
             return state;      
     };

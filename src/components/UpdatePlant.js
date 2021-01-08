@@ -10,11 +10,10 @@ const { Option } = Select;
 
 
 
-const AddPlant = () => {
-  const [formData, setFormData] = useState("");
+const UpdatePlant = (props) => {
+  const [formData, setFormData] = useState({h2o_frequency:props.props.h2o_frequency});
 
   const dispatch=useDispatch();
-
   const onChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -90,6 +89,7 @@ const AddPlant = () => {
             name="h2o_frequency"
             type="text"
             placeholder="waterings per week?"
+            value={formData.h2o_frequency}
             onChange={onChange}
           />
         </Form.Item>
@@ -115,4 +115,4 @@ const AddPlant = () => {
     </Row>
   );
 };
-export default AddPlant;
+export default UpdatePlant;

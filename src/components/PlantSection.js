@@ -9,9 +9,11 @@ export default function PlantSection() {
     const dispatch=useDispatch();
     const { plants }=useSelector((state)=>state);
 
-    useEffect(()=>{
-        dispatch(loadPlant());
-    }, [])
+   
+        useEffect(()=>{
+            if(localStorage.getItem('id')){
+                 dispatch(loadPlant())};
+        }, [])
     return (
         <div className="plants-container">
             {plants.message ? 
